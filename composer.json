@@ -29,7 +29,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Elasticsearch5\\": "src/Elasticsearch/"
+      "Elasticsearch5\\": "src/Elasticsearch5/"
     }
   },
   "autoload-dev": {
