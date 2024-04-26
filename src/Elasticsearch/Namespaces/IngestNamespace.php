@@ -1,17 +1,17 @@
 <?php
 
-namespace Elasticsearch\Namespaces;
+namespace Elasticsearch5\Namespaces;
 
-use Elasticsearch\Endpoints\Ingest\Pipeline\Delete;
-use Elasticsearch\Endpoints\Ingest\Pipeline\Get;
-use Elasticsearch\Endpoints\Ingest\Pipeline\Put;
-use Elasticsearch\Endpoints\Ingest\Simulate;
+use Elasticsearch5\Endpoints\Ingest\Pipeline\Delete;
+use Elasticsearch5\Endpoints\Ingest\Pipeline\Get;
+use Elasticsearch5\Endpoints\Ingest\Pipeline\Put;
+use Elasticsearch5\Endpoints\Ingest\Simulate;
 
 /**
  * Class IngestNamespace
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Namespaces\IngestNamespace
+ * @package  Elasticsearch5\Namespaces\IngestNamespace
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

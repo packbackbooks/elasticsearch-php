@@ -1,14 +1,14 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Template;
+namespace Elasticsearch5\Endpoints\Indices\Template;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
 
 /**
  * Class AbstractTemplateEndpoint
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices\Template
+ * @package  Elasticsearch5\Endpoints\Indices\Template
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

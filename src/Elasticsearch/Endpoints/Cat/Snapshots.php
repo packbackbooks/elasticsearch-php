@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Cat;
+namespace Elasticsearch5\Endpoints\Cat;
 
-use Elasticsearch\Common\Exceptions\RuntimeException;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Common\Exceptions\RuntimeException;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
 
 /**
  * Class Snapshots
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Cat
+ * @package  Elasticsearch5\Endpoints\Cat
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

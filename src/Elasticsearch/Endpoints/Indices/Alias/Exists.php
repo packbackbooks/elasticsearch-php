@@ -1,14 +1,14 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Alias;
+namespace Elasticsearch5\Endpoints\Indices\Alias;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
 
 /**
  * Class Exists
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices\Alias
+ * @package  Elasticsearch5\Endpoints\Indices\Alias
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

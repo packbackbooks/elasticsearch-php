@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Connections;
+namespace Elasticsearch5\Connections;
 
-use Elasticsearch\Serializers\SerializerInterface;
+use Elasticsearch5\Serializers\SerializerInterface;
 use Psr\Log\LoggerInterface;
 
 /**
  * Class AbstractConnection
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Connections
+ * @package  Elasticsearch5\Connections
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

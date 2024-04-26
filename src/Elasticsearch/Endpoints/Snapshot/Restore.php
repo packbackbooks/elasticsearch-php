@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Snapshot;
+namespace Elasticsearch5\Endpoints\Snapshot;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Common\Exceptions;
 
 /**
  * Class Restore
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Snapshot
+ * @package  Elasticsearch5\Endpoints\Snapshot
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -25,7 +25,7 @@ class Restore extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \Elasticsearch5\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setBody($body)
@@ -72,7 +72,7 @@ class Restore extends AbstractEndpoint
     }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Elasticsearch5\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()

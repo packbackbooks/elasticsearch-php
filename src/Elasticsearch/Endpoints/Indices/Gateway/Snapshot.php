@@ -1,14 +1,14 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Gateway;
+namespace Elasticsearch5\Endpoints\Indices\Gateway;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
 
 /**
  * Class Snapshot
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices\Gateway
+ * @package  Elasticsearch5\Endpoints\Indices\Gateway
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

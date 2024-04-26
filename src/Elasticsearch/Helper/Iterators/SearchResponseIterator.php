@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Helper\Iterators;
+namespace Elasticsearch5\Helper\Iterators;
 
-use ElasticSearch\Client;
+use Elasticsearch5\Client;
 use Iterator;
 
 /**
  * Class SearchResponseIterator
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Helper\Iterators
+ * @package  Elasticsearch5\Helper\Iterators
  * @author   Arturo Mejia <arturo.mejia@kreatetechnology.com>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

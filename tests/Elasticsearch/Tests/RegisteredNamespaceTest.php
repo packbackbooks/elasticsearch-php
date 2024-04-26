@@ -1,11 +1,11 @@
 <?php
 
-namespace Elasticsearch\Tests;
+namespace Elasticsearch5\Tests;
 
 use Elasticsearch;
-use Elasticsearch\ClientBuilder;
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Transport;
+use Elasticsearch5\ClientBuilder;
+use Elasticsearch5\Serializers\SerializerInterface;
+use Elasticsearch5\Transport;
 use Mockery as m;
 
 /**
@@ -33,7 +33,7 @@ class RegisteredNamespaceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Elasticsearch\Common\Exceptions\BadMethodCallException
+     * @expectedException \Elasticsearch5\Common\Exceptions\BadMethodCallException
      */
     public function testNonExistingNamespace()
     {
@@ -43,7 +43,7 @@ class RegisteredNamespaceTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class FooNamespaceBuilder implements Elasticsearch\Namespaces\NamespaceBuilderInterface
+class FooNamespaceBuilder implements Elasticsearch5\Namespaces\NamespaceBuilderInterface
 {
     public function getName()
     {

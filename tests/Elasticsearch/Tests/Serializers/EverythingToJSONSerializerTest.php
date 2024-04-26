@@ -1,14 +1,14 @@
 <?php
 
-namespace Elasticsearch\Tests\Serializers;
+namespace Elasticsearch5\Tests\Serializers;
 
-use Elasticsearch\Serializers\EverythingToJSONSerializer;
+use Elasticsearch5\Serializers\EverythingToJSONSerializer;
 use PHPUnit_Framework_TestCase;
 use Mockery as m;
 
 /**
  * Class EverythingToJSONSerializerTest
- * @package Elasticsearch\Tests\Serializers
+ * @package Elasticsearch5\Tests\Serializers
  */
 class EverythingToJSONSerializerTest extends PHPUnit_Framework_TestCase
 {

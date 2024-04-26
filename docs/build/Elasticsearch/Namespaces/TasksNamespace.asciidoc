@@ -1,7 +1,7 @@
 
 
 [[Elasticsearch_Namespaces_TasksNamespace]]
-=== Elasticsearch\Namespaces\TasksNamespace
+=== Elasticsearch5\Namespaces\TasksNamespace
 
 
 

@@ -1,18 +1,18 @@
 <?php
 
-namespace Elasticsearch\ConnectionPool;
+namespace Elasticsearch5\ConnectionPool;
 
-use Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use Elasticsearch\ConnectionPool\Selectors\SelectorInterface;
-use Elasticsearch\Connections\Connection;
-use Elasticsearch\Connections\ConnectionFactoryInterface;
-use Elasticsearch\Connections\ConnectionInterface;
+use Elasticsearch5\Common\Exceptions\InvalidArgumentException;
+use Elasticsearch5\ConnectionPool\Selectors\SelectorInterface;
+use Elasticsearch5\Connections\Connection;
+use Elasticsearch5\Connections\ConnectionFactoryInterface;
+use Elasticsearch5\Connections\ConnectionInterface;
 
 /**
  * Class AbstractConnectionPool
  *
  * @category Elasticsearch
- * @package  Elasticsearch\ConnectionPool
+ * @package  Elasticsearch5\ConnectionPool
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -43,7 +43,7 @@ abstract class AbstractConnectionPool implements ConnectionPoolInterface
     /** @var array */
     protected $connectionPoolParams;
 
-    /** @var \Elasticsearch\Connections\ConnectionFactory  */
+    /** @var \Elasticsearch5\Connections\ConnectionFactory  */
     protected $connectionFactory;
 
     /**

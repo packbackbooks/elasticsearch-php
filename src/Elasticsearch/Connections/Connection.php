@@ -1,26 +1,26 @@
 <?php
 
-namespace Elasticsearch\Connections;
+namespace Elasticsearch5\Connections;
 
-use Elasticsearch\Client;
-use Elasticsearch\Common\Exceptions\AlreadyExpiredException;
-use Elasticsearch\Common\Exceptions\BadRequest400Exception;
-use Elasticsearch\Common\Exceptions\Conflict409Exception;
-use Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost;
-use Elasticsearch\Common\Exceptions\Curl\CouldNotResolveHostException;
-use Elasticsearch\Common\Exceptions\Curl\OperationTimeoutException;
-use Elasticsearch\Common\Exceptions\Forbidden403Exception;
-use Elasticsearch\Common\Exceptions\MaxRetriesException;
-use Elasticsearch\Common\Exceptions\Missing404Exception;
-use Elasticsearch\Common\Exceptions\NoDocumentsToGetException;
-use Elasticsearch\Common\Exceptions\NoShardAvailableException;
-use Elasticsearch\Common\Exceptions\RequestTimeout408Exception;
-use Elasticsearch\Common\Exceptions\RoutingMissingException;
-use Elasticsearch\Common\Exceptions\ScriptLangNotSupportedException;
-use Elasticsearch\Common\Exceptions\ServerErrorResponseException;
-use Elasticsearch\Common\Exceptions\TransportException;
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Transport;
+use Elasticsearch5\Client;
+use Elasticsearch5\Common\Exceptions\AlreadyExpiredException;
+use Elasticsearch5\Common\Exceptions\BadRequest400Exception;
+use Elasticsearch5\Common\Exceptions\Conflict409Exception;
+use Elasticsearch5\Common\Exceptions\Curl\CouldNotConnectToHost;
+use Elasticsearch5\Common\Exceptions\Curl\CouldNotResolveHostException;
+use Elasticsearch5\Common\Exceptions\Curl\OperationTimeoutException;
+use Elasticsearch5\Common\Exceptions\Forbidden403Exception;
+use Elasticsearch5\Common\Exceptions\MaxRetriesException;
+use Elasticsearch5\Common\Exceptions\Missing404Exception;
+use Elasticsearch5\Common\Exceptions\NoDocumentsToGetException;
+use Elasticsearch5\Common\Exceptions\NoShardAvailableException;
+use Elasticsearch5\Common\Exceptions\RequestTimeout408Exception;
+use Elasticsearch5\Common\Exceptions\RoutingMissingException;
+use Elasticsearch5\Common\Exceptions\ScriptLangNotSupportedException;
+use Elasticsearch5\Common\Exceptions\ServerErrorResponseException;
+use Elasticsearch5\Common\Exceptions\TransportException;
+use Elasticsearch5\Serializers\SerializerInterface;
+use Elasticsearch5\Transport;
 use GuzzleHttp\Ring\Core;
 use GuzzleHttp\Ring\Exception\ConnectException;
 use GuzzleHttp\Ring\Exception\RingException;
@@ -30,7 +30,7 @@ use Psr\Log\LoggerInterface;
  * Class AbstractConnection
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Connections
+ * @package  Elasticsearch5\Connections
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -96,7 +96,7 @@ class Connection implements ConnectionInterface
      * @param $handler
      * @param array $hostDetails
      * @param array $connectionParams Array of connection-specific parameters
-     * @param \Elasticsearch\Serializers\SerializerInterface $serializer
+     * @param \Elasticsearch5\Serializers\SerializerInterface $serializer
      * @param \Psr\Log\LoggerInterface $log              Logger object
      * @param \Psr\Log\LoggerInterface $trace
      */
@@ -161,7 +161,7 @@ class Connection implements ConnectionInterface
      * @param null $params
      * @param null $body
      * @param array $options
-     * @param \Elasticsearch\Transport $transport
+     * @param \Elasticsearch5\Transport $transport
      * @return mixed
      */
     public function performRequest($method, $uri, $params = null, $body = null, $options = [], Transport $transport = null)
@@ -547,7 +547,7 @@ class Connection implements ConnectionInterface
     /**
      * @param $request
      * @param $response
-     * @return \Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost|\Elasticsearch\Common\Exceptions\Curl\CouldNotResolveHostException|\Elasticsearch\Common\Exceptions\Curl\OperationTimeoutException|\Elasticsearch\Common\Exceptions\MaxRetriesException
+     * @return \Elasticsearch5\Common\Exceptions\Curl\CouldNotConnectToHost|\Elasticsearch5\Common\Exceptions\Curl\CouldNotResolveHostException|\Elasticsearch5\Common\Exceptions\Curl\OperationTimeoutException|\Elasticsearch5\Common\Exceptions\MaxRetriesException
      */
     protected function getCurlRetryException($request, $response)
     {
@@ -600,7 +600,7 @@ class Connection implements ConnectionInterface
      * @param $request
      * @param $response
      * @param $ignore
-     * @throws \Elasticsearch\Common\Exceptions\AlreadyExpiredException|\Elasticsearch\Common\Exceptions\BadRequest400Exception|\Elasticsearch\Common\Exceptions\Conflict409Exception|\Elasticsearch\Common\Exceptions\Forbidden403Exception|\Elasticsearch\Common\Exceptions\Missing404Exception|\Elasticsearch\Common\Exceptions\ScriptLangNotSupportedException|null
+     * @throws \Elasticsearch5\Common\Exceptions\AlreadyExpiredException|\Elasticsearch5\Common\Exceptions\BadRequest400Exception|\Elasticsearch5\Common\Exceptions\Conflict409Exception|\Elasticsearch5\Common\Exceptions\Forbidden403Exception|\Elasticsearch5\Common\Exceptions\Missing404Exception|\Elasticsearch5\Common\Exceptions\ScriptLangNotSupportedException|null
      */
     private function process4xxError($request, $response, $ignore)
     {
@@ -648,7 +648,7 @@ class Connection implements ConnectionInterface
      * @param $request
      * @param $response
      * @param $ignore
-     * @throws \Elasticsearch\Common\Exceptions\NoDocumentsToGetException|\Elasticsearch\Common\Exceptions\NoShardAvailableException|\Elasticsearch\Common\Exceptions\RoutingMissingException|\Elasticsearch\Common\Exceptions\ServerErrorResponseException
+     * @throws \Elasticsearch5\Common\Exceptions\NoDocumentsToGetException|\Elasticsearch5\Common\Exceptions\NoShardAvailableException|\Elasticsearch5\Common\Exceptions\RoutingMissingException|\Elasticsearch5\Common\Exceptions\ServerErrorResponseException
      */
     private function process5xxError($request, $response, $ignore)
     {
@@ -692,12 +692,12 @@ class Connection implements ConnectionInterface
 
     private function tryDeserialize400Error($response)
     {
-        return $this->tryDeserializeError($response, 'Elasticsearch\Common\Exceptions\BadRequest400Exception');
+        return $this->tryDeserializeError($response, 'Elasticsearch5\Common\Exceptions\BadRequest400Exception');
     }
 
     private function tryDeserialize500Error($response)
     {
-        return $this->tryDeserializeError($response, 'Elasticsearch\Common\Exceptions\ServerErrorResponseException');
+        return $this->tryDeserializeError($response, 'Elasticsearch5\Common\Exceptions\ServerErrorResponseException');
     }
 
     private function tryDeserializeError($response, $errorClass)

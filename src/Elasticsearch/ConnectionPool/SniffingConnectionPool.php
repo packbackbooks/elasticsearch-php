@@ -1,12 +1,12 @@
 <?php
 
-namespace Elasticsearch\ConnectionPool;
+namespace Elasticsearch5\ConnectionPool;
 
-use Elasticsearch\Common\Exceptions\Curl\OperationTimeoutException;
-use Elasticsearch\Common\Exceptions\NoNodesAvailableException;
-use Elasticsearch\ConnectionPool\Selectors\SelectorInterface;
-use Elasticsearch\Connections\Connection;
-use Elasticsearch\Connections\ConnectionFactoryInterface;
+use Elasticsearch5\Common\Exceptions\Curl\OperationTimeoutException;
+use Elasticsearch5\Common\Exceptions\NoNodesAvailableException;
+use Elasticsearch5\ConnectionPool\Selectors\SelectorInterface;
+use Elasticsearch5\Connections\Connection;
+use Elasticsearch5\Connections\ConnectionFactoryInterface;
 
 class SniffingConnectionPool extends AbstractConnectionPool implements ConnectionPoolInterface
 {
@@ -31,7 +31,7 @@ class SniffingConnectionPool extends AbstractConnectionPool implements Connectio
      * @param bool $force
      *
      * @return Connection
-     * @throws \Elasticsearch\Common\Exceptions\NoNodesAvailableException
+     * @throws \Elasticsearch5\Common\Exceptions\NoNodesAvailableException
      */
     public function nextConnection($force = false)
     {

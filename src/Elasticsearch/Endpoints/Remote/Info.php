@@ -1,13 +1,13 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Remote;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+namespace Elasticsearch5\Endpoints\Remote;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
 
 /**
  * Class Info
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Cluster\Nodes
+ * @package  Elasticsearch5\Endpoints\Cluster\Nodes
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

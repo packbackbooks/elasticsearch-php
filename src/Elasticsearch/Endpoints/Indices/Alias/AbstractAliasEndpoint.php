@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Alias;
+namespace Elasticsearch5\Endpoints\Indices\Alias;
 
-use Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Common\Exceptions\InvalidArgumentException;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
 
 /**
  * Class AbstractAliasEndpoint
  *
  * @category Elasticsearch
- * @package Elasticsearch\Endpoints\Indices\Alias
+ * @package Elasticsearch5\Endpoints\Indices\Alias
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -22,7 +22,7 @@ abstract class AbstractAliasEndpoint extends AbstractEndpoint
     /**
      * @param $name
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \Elasticsearch5\Common\Exceptions\InvalidArgumentException
      *
      * @return $this
      */

@@ -1,8 +1,8 @@
 <?php
-namespace Elasticsearch\Tests\Endpoints;
+namespace Elasticsearch5\Tests\Endpoints;
 
-use Elasticsearch\Endpoints\Snapshot\Status;
-use Elasticsearch\Common\Exceptions;
+use Elasticsearch5\Endpoints\Snapshot\Status;
+use Elasticsearch5\Common\Exceptions;
 
 class StatusEndpointTest extends \PHPUnit\Framework\TestCase
 {

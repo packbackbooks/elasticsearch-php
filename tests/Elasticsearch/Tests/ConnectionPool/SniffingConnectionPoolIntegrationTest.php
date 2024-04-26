@@ -1,5 +1,5 @@
 <?php
-use Elasticsearch\ClientBuilder;
+use Elasticsearch5\ClientBuilder;
 
 /**
  * Class SniffingConnectionPoolIntegrationTest
@@ -22,7 +22,7 @@ class SniffingConnectionPoolIntegrationTest extends \PHPUnit_Framework_TestCase
     {
         $client = ClientBuilder::create()
             ->setHosts([$_SERVER['ES_TEST_HOST']])
-            ->setConnectionPool('\Elasticsearch\ConnectionPool\SniffingConnectionPool', ['sniffingInterval' => -10])
+            ->setConnectionPool('\Elasticsearch5\ConnectionPool\SniffingConnectionPool', ['sniffingInterval' => -10])
             ->build();
 
         $pinged = $client->ping();

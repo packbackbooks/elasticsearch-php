@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Validate;
+namespace Elasticsearch5\Endpoints\Indices\Validate;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Common\Exceptions;
 
 /**
  * Class Query
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices\Validate
+ * @package  Elasticsearch5\Endpoints\Indices\Validate
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -19,7 +19,7 @@ class Query extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \Elasticsearch5\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setBody($body)

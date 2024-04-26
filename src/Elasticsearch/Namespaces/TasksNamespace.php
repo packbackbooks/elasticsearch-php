@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Namespaces;
+namespace Elasticsearch5\Namespaces;
 
-use Elasticsearch\Endpoints\Tasks\Cancel;
-use Elasticsearch\Endpoints\Tasks\Get;
+use Elasticsearch5\Endpoints\Tasks\Cancel;
+use Elasticsearch5\Endpoints\Tasks\Get;
 
 /**
  * Class TasksNamespace
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Namespaces\TasksNamespace
+ * @package  Elasticsearch5\Namespaces\TasksNamespace
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

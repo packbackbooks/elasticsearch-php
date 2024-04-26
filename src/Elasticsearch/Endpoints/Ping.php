@@ -1,12 +1,12 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Elasticsearch5\Endpoints;
 
 /**
  * Class Ping
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Endpoints
+ * @package  Elasticsearch5\Endpoints
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

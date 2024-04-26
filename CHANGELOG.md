@@ -25,7 +25,7 @@
 - Use upper-case "Host" header [[1621094]](http://github.com/elasticsearch/elasticsearch-php/commit/1621094)
 - Shrink API was not setting body correctly [[129ed4a]](http://github.com/elasticsearch/elasticsearch-php/commit/129ed4a)
 - Capitalize 'Content-Type' for maximum compatibility [[3f136b5]](http://github.com/elasticsearch/elasticsearch-php/commit/3f136b5)
-- Fix ClientBuilder - pass correct argument for Elasticsearch\Endpoints\MsearchTemplate::__construct. (#606) [[21f5ce4]](http://github.com/elasticsearch/elasticsearch-php/commit/21f5ce4)
+- Fix ClientBuilder - pass correct argument for Elasticsearch5\Endpoints\MsearchTemplate::__construct. (#606) [[21f5ce4]](http://github.com/elasticsearch/elasticsearch-php/commit/21f5ce4)
 
 ### Testing
 

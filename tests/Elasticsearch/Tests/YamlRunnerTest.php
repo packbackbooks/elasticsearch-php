@@ -1,16 +1,16 @@
 <?php
 
-namespace Elasticsearch\Tests;
+namespace Elasticsearch5\Tests;
 
 use Doctrine\Common\Inflector\Inflector;
 use Elasticsearch;
-use Elasticsearch\Common\Exceptions\BadRequest400Exception;
-use Elasticsearch\Common\Exceptions\Conflict409Exception;
-use Elasticsearch\Common\Exceptions\Forbidden403Exception;
-use Elasticsearch\Common\Exceptions\Missing404Exception;
-use Elasticsearch\Common\Exceptions\RequestTimeout408Exception;
-use Elasticsearch\Common\Exceptions\ServerErrorResponseException;
-use Elasticsearch\Common\Exceptions\RoutingMissingException;
+use Elasticsearch5\Common\Exceptions\BadRequest400Exception;
+use Elasticsearch5\Common\Exceptions\Conflict409Exception;
+use Elasticsearch5\Common\Exceptions\Forbidden403Exception;
+use Elasticsearch5\Common\Exceptions\Missing404Exception;
+use Elasticsearch5\Common\Exceptions\RequestTimeout408Exception;
+use Elasticsearch5\Common\Exceptions\ServerErrorResponseException;
+use Elasticsearch5\Common\Exceptions\RoutingMissingException;
 use GuzzleHttp\Ring\Future\FutureArrayInterface;
 use stdClass;
 use Symfony\Component\Finder\Finder;
@@ -34,7 +34,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
     /** @var Parser Yaml parser for reading integrations tests */
     private $yaml;
 
-    /** @var Elasticsearch\Client client used by elasticsearch */
+    /** @var Elasticsearch5\Client client used by elasticsearch */
     private $client;
 
     /** @var string Es version */
@@ -105,7 +105,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->clean();
-        $builder = Elasticsearch\ClientBuilder::create()->setHosts([self::getHost()]);
+        $builder = Elasticsearch5\ClientBuilder::create()->setHosts([self::getHost()]);
         if (version_compare(phpversion(), '5.6.6', '<') || ! defined('JSON_PRESERVE_ZERO_FRACTION')) {
             $builder->allowBadJSONSerialization();
         }
@@ -317,7 +317,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         }
 
         // TODO remove this after cat testing situation resolved
-        if ($caller instanceof Elasticsearch\Namespaces\CatNamespace) {
+        if ($caller instanceof Elasticsearch5\Namespaces\CatNamespace) {
             if (!isset($endpointParams->format)) {
                 $endpointParams->format = 'text';
             }

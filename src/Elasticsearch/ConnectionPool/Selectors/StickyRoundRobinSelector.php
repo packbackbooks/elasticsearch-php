@@ -1,14 +1,14 @@
 <?php
 
-namespace Elasticsearch\ConnectionPool\Selectors;
+namespace Elasticsearch5\ConnectionPool\Selectors;
 
-use Elasticsearch\Connections\ConnectionInterface;
+use Elasticsearch5\Connections\ConnectionInterface;
 
 /**
  * Class StickyRoundRobinSelector
  *
  * @category Elasticsearch
- * @package  Elasticsearch\ConnectionPool\Selectors\ConnectionPool
+ * @package  Elasticsearch5\ConnectionPool\Selectors\ConnectionPool
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

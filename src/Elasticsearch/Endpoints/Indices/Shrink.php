@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices;
+namespace Elasticsearch5\Endpoints\Indices;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Common\Exceptions;
 
 /**
  * Class Shrink.
@@ -22,7 +22,7 @@ class Shrink extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \Elasticsearch5\Common\Exceptions\InvalidArgumentException
      *
      * @return $this
      */
@@ -53,7 +53,7 @@ class Shrink extends AbstractEndpoint
     }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\BadMethodCallException
+     * @throws \Elasticsearch5\Common\Exceptions\BadMethodCallException
      *
      * @return string
      */

@@ -1,12 +1,12 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Elasticsearch5\Endpoints;
 
 /**
  * Class Reindex
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices
+ * @package  Elasticsearch5\Endpoints\Indices
  * @author   Augustin Husson <husson.augustin@gmail.com>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -48,7 +48,7 @@ class Reindex extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \Elasticsearch5\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setBody($body)

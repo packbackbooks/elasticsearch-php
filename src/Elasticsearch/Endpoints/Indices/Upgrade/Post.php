@@ -5,16 +5,16 @@
  * Time: 14:34:49 pm
  */
 
-namespace Elasticsearch\Endpoints\Indices\Upgrade;
+namespace Elasticsearch5\Endpoints\Indices\Upgrade;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Common\Exceptions;
 
 /**
  * Class Post
  *
  * @category Elasticsearch
- * @package Elasticsearch\Endpoints\Indices
+ * @package Elasticsearch5\Endpoints\Indices
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

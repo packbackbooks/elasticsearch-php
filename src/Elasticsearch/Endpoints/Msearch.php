@@ -1,16 +1,16 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Elasticsearch5\Endpoints;
 
-use Elasticsearch\Common\Exceptions;
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Transport;
+use Elasticsearch5\Common\Exceptions;
+use Elasticsearch5\Serializers\SerializerInterface;
+use Elasticsearch5\Transport;
 
 /**
  * Class Msearch
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Endpoints
+ * @package  Elasticsearch5\Endpoints
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -28,7 +28,7 @@ class Msearch extends AbstractEndpoint
     /**
      * @param array|string $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \Elasticsearch5\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setBody($body)
@@ -83,7 +83,7 @@ class Msearch extends AbstractEndpoint
 
     /**
      * @return array
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Elasticsearch5\Common\Exceptions\RuntimeException
      */
     public function getBody()
     {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Common\Exceptions\Curl;
+namespace Elasticsearch5\Common\Exceptions\Curl;
 
-use Elasticsearch\Common\Exceptions\ElasticsearchException;
-use Elasticsearch\Common\Exceptions\TransportException;
+use Elasticsearch5\Common\Exceptions\ElasticsearchException;
+use Elasticsearch5\Common\Exceptions\TransportException;
 
 /**
  * Class OperationTimeoutException
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Common\Exceptions\Curl
+ * @package  Elasticsearch5\Common\Exceptions\Curl
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

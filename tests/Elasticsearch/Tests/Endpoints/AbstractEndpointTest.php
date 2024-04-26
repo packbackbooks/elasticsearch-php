@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Tests\Endpoints;
+namespace Elasticsearch5\Tests\Endpoints;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
 
 class AbstractEndpointTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,7 +18,7 @@ class AbstractEndpointTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider invalidParameters
-     * @expectedException Elasticsearch\Common\Exceptions\UnexpectedValueException
+     * @expectedException Elasticsearch5\Common\Exceptions\UnexpectedValueException
      */
     public function testInvalidParamsCauseErrorsWhenProvidedToSetParams(array $params)
     {

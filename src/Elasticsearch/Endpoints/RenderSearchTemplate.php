@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Elasticsearch5\Endpoints;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Elasticsearch5\Endpoints\AbstractEndpoint;
+use Elasticsearch5\Common\Exceptions;
 
 /**
  * Class Render
  *
  * @category Elasticsearch
- * @package Elasticsearch\Endpoints
+ * @package Elasticsearch5\Endpoints
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -20,7 +20,7 @@ class RenderSearchTemplate extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \Elasticsearch5\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setBody($body)
@@ -34,7 +34,7 @@ class RenderSearchTemplate extends AbstractEndpoint
     }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Elasticsearch5\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()
@@ -60,7 +60,7 @@ class RenderSearchTemplate extends AbstractEndpoint
 
     /**
      * @return array
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Elasticsearch5\Common\Exceptions\RuntimeException
      */
     public function getBody()
     {

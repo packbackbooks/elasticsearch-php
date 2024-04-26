@@ -1,10 +1,10 @@
 <?php
 
-namespace Elasticsearch\Tests;
+namespace Elasticsearch5\Tests;
 
 use Elasticsearch;
-use Elasticsearch\ClientBuilder;
-use Elasticsearch\Connections\Connection;
+use Elasticsearch5\ClientBuilder;
+use Elasticsearch5\Connections\Connection;
 use Mockery as m;
 
 /**
@@ -25,11 +25,11 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @expectedException \Elasticsearch5\Common\Exceptions\InvalidArgumentException
      */
     public function testConstructorIllegalPort()
     {
-        $client = Elasticsearch\ClientBuilder::create()->setHosts(['localhost:abc'])->build();
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts(['localhost:abc'])->build();
     }
 
     public function testFromConfig()
@@ -45,7 +45,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Elasticsearch\Common\Exceptions\RuntimeException
+     * @expectedException \Elasticsearch5\Common\Exceptions\RuntimeException
      */
     public function testFromConfigBadParam()
     {
@@ -82,7 +82,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'id' => 'test'
             ]);
             $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\InvalidArgumentException $e) {
             // all good
         }
 
@@ -93,7 +93,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'id' => 'test'
             ]);
             $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\InvalidArgumentException $e) {
             // all good
         }
 
@@ -104,7 +104,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'id' => null
             ]);
             $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\InvalidArgumentException $e) {
             // all good
         }
     }
@@ -120,7 +120,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'id' => 'test'
             ]);
             $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\InvalidArgumentException $e) {
             // all good
         }
 
@@ -131,7 +131,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'id' => 'test'
             ]);
             $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\InvalidArgumentException $e) {
             // all good
         }
 
@@ -142,7 +142,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'id' => ''
             ]);
             $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\InvalidArgumentException $e) {
             // all good
         }
     }
@@ -158,7 +158,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'id' => 'test'
             ]);
             $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\InvalidArgumentException $e) {
             // all good
         }
 
@@ -169,7 +169,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'id' => 'test'
             ]);
             $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\InvalidArgumentException $e) {
             // all good
         }
     }
@@ -185,7 +185,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'id' => 'test'
             ]);
             $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\InvalidArgumentException $e) {
             // all good
         }
 
@@ -196,14 +196,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'id' => 'test'
             ]);
             $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\InvalidArgumentException $e) {
             // all good
         }
     }
 
     public function testMaxRetriesException()
     {
-        $client = Elasticsearch\ClientBuilder::create()
+        $client = Elasticsearch5\ClientBuilder::create()
             ->setHosts(["localhost:1"])
             ->setRetries(0)
             ->build();
@@ -218,7 +218,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ]
         );
 
-        $client = Elasticsearch\ClientBuilder::create()
+        $client = Elasticsearch5\ClientBuilder::create()
             ->setHosts(["localhost:1"])
             ->setRetries(0)
             ->build();
@@ -226,16 +226,16 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         try {
             $client->search($searchParams);
             $this->fail("Should have thrown CouldNotConnectToHost");
-        } catch (Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost $e) {
+        } catch (Elasticsearch5\Common\Exceptions\Curl\CouldNotConnectToHost $e) {
             // All good
             $previous = $e->getPrevious();
-            $this->assertInstanceOf('Elasticsearch\Common\Exceptions\MaxRetriesException', $previous);
+            $this->assertInstanceOf('Elasticsearch5\Common\Exceptions\MaxRetriesException', $previous);
         } catch (\Exception $e) {
             throw $e;
         }
 
 
-        $client = Elasticsearch\ClientBuilder::create()
+        $client = Elasticsearch5\ClientBuilder::create()
             ->setHosts(["localhost:1"])
             ->setRetries(0)
             ->build();
@@ -243,10 +243,10 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         try {
             $client->search($searchParams);
             $this->fail("Should have thrown TransportException");
-        } catch (Elasticsearch\Common\Exceptions\TransportException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\TransportException $e) {
             // All good
             $previous = $e->getPrevious();
-            $this->assertInstanceOf('Elasticsearch\Common\Exceptions\MaxRetriesException', $previous);
+            $this->assertInstanceOf('Elasticsearch5\Common\Exceptions\MaxRetriesException', $previous);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -254,7 +254,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     public function testInlineHosts()
     {
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             'localhost:9200'
         ])->build();
         $host = $client->transport->getConnection();
@@ -262,21 +262,21 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("http", $host->getTransportSchema());
 
 
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             'http://localhost:9200'
         ])->build();
         $host = $client->transport->getConnection();
         $this->assertEquals("localhost:9200", $host->getHost());
         $this->assertEquals("http", $host->getTransportSchema());
 
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             'http://foo.com:9200'
         ])->build();
         $host = $client->transport->getConnection();
         $this->assertEquals("foo.com:9200", $host->getHost());
         $this->assertEquals("http", $host->getTransportSchema());
 
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             'https://foo.com:9200'
         ])->build();
         $host = $client->transport->getConnection();
@@ -284,7 +284,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("https", $host->getTransportSchema());
 
 
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             'https://user:pass@foo.com:9200'
         ])->build();
         $host = $client->transport->getConnection();
@@ -295,7 +295,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     public function testExtendedHosts()
     {
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             [
                 'host' => 'localhost',
                 'port' => 9200,
@@ -307,7 +307,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("http", $host->getTransportSchema());
 
 
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             [
                 'host' => 'foo.com',
                 'port' => 9200,
@@ -319,7 +319,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("http", $host->getTransportSchema());
 
 
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             [
                 'host' => 'foo.com',
                 'port' => 9200,
@@ -331,7 +331,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("https", $host->getTransportSchema());
 
 
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             [
                 'host' => 'foo.com',
                 'scheme' => 'http'
@@ -342,7 +342,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("http", $host->getTransportSchema());
 
 
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             [
                 'host' => 'foo.com'
             ]
@@ -352,7 +352,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("http", $host->getTransportSchema());
 
 
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             [
                 'host' => 'foo.com',
                 'port' => 9500,
@@ -365,19 +365,19 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
 
         try {
-            $client = Elasticsearch\ClientBuilder::create()->setHosts([
+            $client = Elasticsearch5\ClientBuilder::create()->setHosts([
                 [
                     'port' => 9200,
                     'scheme' => 'http'
                 ]
             ])->build();
             $this->fail("Expected RuntimeException from missing host, none thrown");
-        } catch (Elasticsearch\Common\Exceptions\RuntimeException $e) {
+        } catch (Elasticsearch5\Common\Exceptions\RuntimeException $e) {
             // good
         }
 
         // Underscore host, questionably legal, but inline method would break
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             [
                 'host' => 'the_foo.com'
             ]
@@ -388,7 +388,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
 
         // Special characters in user/pass, would break inline
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([
+        $client = Elasticsearch5\ClientBuilder::create()->setHosts([
             [
                 'host' => 'foo.com',
                 'user' => 'user',

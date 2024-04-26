@@ -14,9 +14,9 @@ class StaticConnectionPoolIntegrationTest extends \PHPUnit_Framework_TestCase
 {
     // Issue #636
     public function test404Liveness() {
-        $client = \Elasticsearch\ClientBuilder::create()
+        $client = \Elasticsearch5\ClientBuilder::create()
             ->setHosts([$_SERVER['ES_TEST_HOST']])
-            ->setConnectionPool(\Elasticsearch\ConnectionPool\StaticConnectionPool::class)
+            ->setConnectionPool(\Elasticsearch5\ConnectionPool\StaticConnectionPool::class)
             ->build();
 
         $connection = $client->transport->getConnection();
