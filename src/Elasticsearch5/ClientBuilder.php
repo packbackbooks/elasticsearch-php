@@ -14,7 +14,7 @@ use Elasticsearch5\Namespaces\NamespaceBuilderInterface;
 use Elasticsearch5\Serializers\SerializerInterface;
 use Elasticsearch5\ConnectionPool\Selectors;
 use Elasticsearch5\Serializers\SmartSerializer;
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Handler\CurlHandler;
 // use GuzzleHttp\Ring\Client\CurlMultiHandler;
