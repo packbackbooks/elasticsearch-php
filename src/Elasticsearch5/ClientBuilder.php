@@ -14,11 +14,9 @@ use Elasticsearch5\Namespaces\NamespaceBuilderInterface;
 use Elasticsearch5\Serializers\SerializerInterface;
 use Elasticsearch5\ConnectionPool\Selectors;
 use Elasticsearch5\Serializers\SmartSerializer;
-use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Handler\CurlHandler;
-// use GuzzleHttp\Ring\Client\CurlMultiHandler;
-// use GuzzleHttp\Ring\Client\Middleware;
+use GuzzleHttp\Ring\Client\CurlHandler;
+use GuzzleHttp\Ring\Client\CurlMultiHandler;
+use GuzzleHttp\Ring\Client\Middleware;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Monolog\Logger;
@@ -174,22 +172,20 @@ class ClientBuilder
      */
     public static function defaultHandler($multiParams = [], $singleParams = [])
     {
-        // $future = null;
-        // if (extension_loaded('curl')) {
-        //     $config = array_merge([ 'mh' => curl_multi_init() ], $multiParams);
-        //     if (function_exists('curl_reset')) {
-        //         $default = new CurlHandler($singleParams);
-        //         $future = new CurlMultiHandler($config);
-        //     } else {
-        //         $default = new CurlMultiHandler($config);
-        //     }
-        // } else {
-        //     throw new \RuntimeException('Elasticsearch-PHP requires cURL, or a custom HTTP handler.');
-        // }
+        $future = null;
+        if (extension_loaded('curl')) {
+            $config = array_merge([ 'mh' => curl_multi_init() ], $multiParams);
+            if (function_exists('curl_reset')) {
+                $default = new CurlHandler($singleParams);
+                $future = new CurlMultiHandler($config);
+            } else {
+                $default = new CurlMultiHandler($config);
+            }
+        } else {
+            throw new \RuntimeException('Elasticsearch-PHP requires cURL, or a custom HTTP handler.');
+        }
 
-        // return $future ? Middleware::wrapFuture($default, $future) : $default;
-
-        return new CurlHandler($singleParams);
+        return $future ? Middleware::wrapFuture($default, $future) : $default;
     }
 
     /**
